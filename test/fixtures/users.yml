@@ -1,0 +1,4 @@
+admin:
+  name: 管理者A
+  email: admin@example.com
+  password_digest: <%= User.digest('jjjjjj') %>
