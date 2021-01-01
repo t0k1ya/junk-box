@@ -1,1 +1,10 @@
-<h1>hello</h1>
+<div>
+  <%# <%= render 'components/search' %>
+  <h2><%= markdown(@contents[0]).html_safe %></h2>
+  <div>
+    <%= markdown(@contents[1]).html_safe %>
+  </div>
+  <div>
+    <%= markdown(@contents[2]).html_safe %>
+  </div>
+<div>
