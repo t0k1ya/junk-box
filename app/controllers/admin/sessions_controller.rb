@@ -3,6 +3,10 @@ class Admin::SessionsController < ApplicationController
   end
 
   def new
+    if logged_in?
+      flash[:notice] = 'ログイン済みです'
+      redirect_to admin_path(current_user)
+    end
   end
 
   def create
