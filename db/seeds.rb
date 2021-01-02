@@ -10,7 +10,7 @@ User.create!(
 user = User.find(1)
 
 20.times do |n|
-  title = '# Hello World'
+  title = 'Hello World'
   content = "#{n}番目の記事です"
   Article.create!(
     user: user,
