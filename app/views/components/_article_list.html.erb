@@ -1,18 +1,18 @@
 <div class="article_list_wrapper">
-  <% @contents.each do |content| %>
+  <% @articles.each do |article| %>
     <article class="article_headline">
       <%= link_to(article_path(1)) do %>
         <div class="eyecatch">
           <img src="" alt="" />
         </div>
         <span class="date">
-          <%= markdown(content[2]).html_safe %>
+          <%#<%= markdown(article.created_at).html_safe %>
         </span>
         <p>
-          <%= markdown(content[0]).html_safe %>
+          <%= markdown(article.title).html_safe %>
         </p>
         <p>
-          <%= markdown(content[1]).html_safe %>
+          <%= markdown(article.content).html_safe %>
         </p>
       <% end %>
     </article>
