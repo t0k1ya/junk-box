@@ -1,0 +1,18 @@
+<div class="article_list_wrapper">
+  <% @contents.each do |content| %>
+    <article class="article_headline">
+      <div class="eyecatch">
+        <img src="" alt="" />
+      </div>
+      <p>
+        <%= markdown(content[2]).html_safe %>
+      </p>
+      <p>
+        <%= markdown(content[0]).html_safe %>
+      </p>
+      <p>
+        <%= markdown(content[1]).html_safe %>
+      </p>
+    </article>
+  <% end %>
+</div>

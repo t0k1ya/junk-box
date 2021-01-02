@@ -21,14 +21,11 @@ module ApplicationHelper
         else
             lang = language
       end
-      puts 'code: ', code
-      puts 'lang: ', lang
       CodeRay.scan(code, lang).div
     end
   end
 
   def markdown(text)
-    puts 'text: ', text
     html_render = HTMLwithCoderay.new(filter_html: true, hard_wrap: true)
     options = {
       autolink: true,
