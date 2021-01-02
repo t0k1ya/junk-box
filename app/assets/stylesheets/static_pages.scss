@@ -3,11 +3,16 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 header {
   color: white;
+  background-color: #606060;
+  h1, h2, h3 {
+    margin: 0%;
+  }
 }
 
 .static_pages_wrapper {
   width: 100%;
-  max-width: 1600px;
+  min-width: 800px;
+  background-color: #606060;
 }
 
 /* 
@@ -34,30 +39,43 @@ header {
   h1, p {
     margin: 0;
   }
-}
 
-.article_headline {
-  margin: 30px 10px;
-  width: 300px;
-}
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
-.eyecatch {
-  width: auto;
-  height: 150px;
-  background-color: #E9E1E1;
+  .date {
+    color: #B6AAAA;
+  }
+
+  .article_headline {
+    margin: 30px 10px;
+    width: 300px;
+  }
+
+  .eyecatch {
+    width: auto;
+    height: 150px;
+    background-color: #E9E1E1;
+  }
+
 }
 
 @media (max-width: 480px) {
+  .static_pages_wrapper {
+    min-width: 0;
+  }
 
   .article_list_wrapper {
     margin: 10px;
     padding-left: 0px;
     padding-top: 10px;
     display: block;
-  }
 
-  .article_headline {
-    margin: 30px 10px;
-    width: auto;
+    .article_headline {
+      margin: 30px 10px;
+      width: auto;
+    }
   }
 }

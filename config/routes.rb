@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
+  get '/article/:id', to: 'articles#show', as: :article
   
   namespace :admin do
     get '/login', to: 'sessions#new'
