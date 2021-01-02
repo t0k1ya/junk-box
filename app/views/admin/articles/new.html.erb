@@ -1,0 +1,15 @@
+<div>
+  <div contenteditable="true" data-placeholder="test">
+  </div>
+  </div>
+  <%= form_with model: @article, local: true do |f|  %>
+    <div>
+      <%= f.label :title, 'タイトル' %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.text_area :content %>
+    </div>
+  <% end %>
+
+</div>
