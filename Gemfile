@@ -49,6 +49,8 @@ group :development do
 end
 
 group :test do
+  # assert_templateを使うには必要らしい
+  gem 'rails-controller-testing', '1.0.4'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

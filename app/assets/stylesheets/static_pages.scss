@@ -4,3 +4,60 @@
 header {
   color: white;
 }
+
+.static_pages_wrapper {
+  width: 100%;
+  max-width: 1600px;
+}
+
+/* 
+  searchコンポーネント
+*/
+.search_wrapper {
+  text-align: center;
+}
+
+.search {
+  color: white;
+}
+
+/*
+  article_listコンポーネント
+*/
+.article_list_wrapper {
+  margin: 100px 50px;
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+
+  h1, p {
+    margin: 0;
+  }
+}
+
+.article_headline {
+  margin: 30px 10px;
+  width: 300px;
+}
+
+.eyecatch {
+  width: auto;
+  height: 150px;
+  background-color: #E9E1E1;
+}
+
+@media (max-width: 480px) {
+
+  .article_list_wrapper {
+    margin: 10px;
+    padding-left: 0px;
+    padding-top: 10px;
+    display: block;
+  }
+
+  .article_headline {
+    margin: 30px 10px;
+    width: auto;
+  }
+}
