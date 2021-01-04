@@ -1,0 +1,5 @@
+post1:
+  user: <%= User.find(1) %>,
+  title: 'Hello World',
+  content: 'こんにちは、初投稿です！',
+  status: 1,

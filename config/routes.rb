@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     get '/:id', to: 'admins#show'
+
+    resources :articles do
+      collection do
+        post :draft
+      end
+    end
   end
   # 例外処理 TODO: コメアウト取り消す
   # get '*path', controller: 'application', action: 'render_404'
