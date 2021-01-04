@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery
   include Admin::SessionsHelper
 
   # 例外処理 TODO: 最後のコメアウト取り消す

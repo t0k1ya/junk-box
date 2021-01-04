@@ -1,6 +1,6 @@
 <div class="admin_article_wrapper">
   <section class="post_wrapper">
-    <%= form_with model: @article, local: true do |f|  %>
+    <%= form_with model: @article, url: '/admin/articles', local: true do |f|  %>
       <div>
         <%= f.label :title, 'タイトル' %><br />
         <%= f.text_field :title %>

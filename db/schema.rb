@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2021_01_02_123960) do
   create_table "articles", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
-    t.string "content", null: false
     t.string "status", null: false
+    t.string "is_deleted", default: "f", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_articles_on_user_id"

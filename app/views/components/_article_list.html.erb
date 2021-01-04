@@ -1,18 +1,19 @@
 <div class="article_list_wrapper">
   <% @articles.each do |article| %>
     <article class="article_headline">
-      <%= link_to(article_path(1)) do %>
+      <%= link_to(article_path(article)) do %>
+        <span class="date">
+          <%= article.created_at.to_s(:datetime_jp) %>
+        </span>
         <div class="eyecatch">
           <img src="" alt="" />
         </div>
-        <span class="date">
-          <%= article.created_at %>
-        </span>
+        <div class="title">
+          <%= article.title.length < 60 ? article.title : article.title.slice(0, 10) %>
+        </div>
         <p>
-          <%= article.title %>
-        </p>
-        <p>
-          <%= article.content %>
+          <%#<%= article.content %>
+          <%= article.content.to_s.length < 100 ? article.content : article.content.to_s.slice(0, 100) %>
         </p>
       <% end %>
     </article>

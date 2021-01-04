@@ -1,6 +1,6 @@
 <div class="article_detail_wrapper">
   <section>
-    <%= @article.created_at %>
+    <%= @article.created_at.to_s(:datetime_jp) %>
     <%= @article.title %>
   </section>
   <section>
