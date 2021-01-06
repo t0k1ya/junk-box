@@ -1,0 +1,14 @@
+<div class="_article_list__wrapper">
+
+  <% articles.each do |article| %>
+    <div class="item">
+      <div class="article">
+        <div class="title"><%= article.title %></div>
+        <%= article.created_at.to_s(:datetime_jp) %>
+      </div>
+      <div>
+        <%= link_to('編集', edit_admin_article_path(article)) %>
+      </div>
+    </div>
+  <% end %>
+</div>
