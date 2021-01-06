@@ -9,12 +9,17 @@
           <img src="" alt="" />
         </div>
         <div class="title">
-          <%= article.title.length < 60 ? article.title : article.title.slice(0, 10) %>
+          <%=
+            article.title.length < 60 ?
+              article.title : article.title.slice(0, 10)
+          %>
         </div>
-        <p>
-          <%#<%= article.content %>
-          <%= article.content.to_s.length < 100 ? article.content : article.content.to_s.slice(0, 100) %>
-        </p>
+        <div class="intro">
+          <%=
+            article.content.to_plain_text.length < 100 ? 
+              article.content : "#{article.content.to_plain_text.slice(0, 100)}..."
+          %>
+        </div>
       <% end %>
     </article>
   <% end %>

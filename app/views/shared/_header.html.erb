@@ -1,5 +1,5 @@
 <header>
-  <h2><%= link_to 'Noodle with Beef', root_path %></h2>
+  <div class="blog_title"><%= link_to 'Noodle with Beef', root_path %></div>
   <% if @admin %>
     <%= link_to("#{@admin.name}でログイン中", admin_path(@admin)) %>
   <% end %>

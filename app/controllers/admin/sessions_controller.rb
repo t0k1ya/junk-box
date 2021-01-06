@@ -1,4 +1,6 @@
 class Admin::SessionsController < ApplicationController
+  before_action :acquaintance?
+
   def index
   end
 

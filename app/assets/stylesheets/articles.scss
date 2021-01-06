@@ -2,7 +2,65 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .article_detail_wrapper {
-  width: 100%;
-  min-width: 600px;
-  padding: 0% 10%;
+  width: calc(100% - 30%);
+  padding: 0 15%;
+
+  .wrapper {
+    display: flex;
+    padding-top: 5%;
+  }
+
+  .article_wrapper {
+    width: 65%;
+  }
+
+  .title_wrapper {
+    margin-top: 2%;
+
+    .title {
+      font-size: 2em;
+    }
+  
+    .date {
+      text-align: right;
+    }
+  
+  }
+
+  .content_wrapper {
+    padding-top: 7%;
+  }
+
+  .index_wrapper {
+    width: 250px;
+    height: 400px;
+    margin-left: 10%;
+    background-color: #E9E1E1;
+  }
+}
+
+@media (max-width: 480px) {
+  .article_detail_wrapper {
+    width: calc(100% - 10%);
+    padding: 5%;
+
+    .wrapper {
+      display: inline;
+      padding: 0;
+    }
+
+    .article_wrapper {
+      width: 100%;
+    }
+
+    .content_wrapper {
+      padding-top: 5%;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .article_detail_wrapper {
+    padding: 0 300px;
+  }
 }
