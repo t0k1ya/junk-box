@@ -1,8 +1,9 @@
 class Admin::AdminsController < ApplicationController
-  before_action :logged_in_user, only: [:show, :update, :destroy]
+  before_action :logged_in_user
 
   def show
     @admin = User.find(params[:id])
+    @articles = @admin.articles.all
   end
 
   def new
