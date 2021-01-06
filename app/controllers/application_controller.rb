@@ -20,8 +20,13 @@ class ApplicationController < ActionController::Base
   private
     def logged_in_user
       unless logged_in?
-        flash[:alert] = 'あなた、管理者ではありませんね？'
-        redirect_to :root
+        render 'errors/error_404'
+      end
+    end
+
+    def acquaintance?
+      unless params[:secret] == 'morelia'
+        render 'errors/error_404'
       end
     end
 end

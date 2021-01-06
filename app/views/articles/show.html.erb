@@ -1,9 +1,15 @@
 <div class="article_detail_wrapper">
-  <section>
-    <%= @article.created_at.to_s(:datetime_jp) %>
-    <%= @article.title %>
-  </section>
-  <section>
-    <%= @article.content %>
-  </section>
+  <div class="wrapper">
+    <div class="article_wrapper">
+      <section class="title_wrapper">
+        <div class="title"><%= @article.title %></div>
+        <div class="date"><%= @article.created_at.to_s(:datetime_jp) %></div>
+      </section>
+      <section class="content_wrapper">
+        <%= @article.content %>
+      </section>
+    </div>
+    <%# index機能 %>
+    
+  </div>
 </div>

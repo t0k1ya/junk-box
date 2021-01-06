@@ -18,7 +18,9 @@
       <% end %>
     </div>
     <%= yield %>
+    <% if Rails.env.development? %>
+      <div class="dubug_wrapper"><%= debug(params) %></div>
+    <% end %>
     <%= render 'shared/footer' %>
-    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

@@ -1,5 +1,5 @@
 class Admin::ArticlesController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :draft]
+  before_action :logged_in_user
 
   def new
     @admin = current_user
@@ -8,12 +8,13 @@ class Admin::ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    @article.status = '1'
-    @article.is_deleted = false
-    if @article.save
-      flash[:notice] = '記事を保存しました'
-      redirect_to admin_path(current_user)
-    end
+    create_index(@article.content)
+    # @article.status = '1'
+    # @article.is_deleted = false
+    # if @article.save
+    #   flash[:notice] = '記事を保存しました'
+    #   redirect_to admin_path(current_user)
+    # end
   end
 
   def draft
@@ -21,7 +22,10 @@ class Admin::ArticlesController < ApplicationController
 
   private
     def article_params
-      puts 'params: ', params
       params.require(:article).permit(:title, :content)
+    end
+
+    def create_index(content)
+      puts 'content: ', content.to_s
     end
 end
