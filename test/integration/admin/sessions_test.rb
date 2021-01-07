@@ -26,9 +26,9 @@ class Admin::SessionsTest < ActionDispatch::IntegrationTest
     assert_redirected_to admin_url(@admin)
   end
 
-  test "shouldn show login page when you haven't logged in" do
+  test "shouldn't show login page when you haven't secret" do
     get admin_login_path
     # assert_template コントローラ名/メソッド名
-    assert_template 'sessions/new'
+    assert_template 'errors/error_404'
   end
 end
