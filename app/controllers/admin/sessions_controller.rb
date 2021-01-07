@@ -1,5 +1,5 @@
 class Admin::SessionsController < ApplicationController
-  before_action :acquaintance?
+  before_action :acquaintance?, only: :new
 
   def index
   end
@@ -13,6 +13,7 @@ class Admin::SessionsController < ApplicationController
 
   def create
     admin = User.find_by(email: params[:session][:email].downcase)
+    puts 'params: ', params[:session][:email]
     if admin&.authenticate(params[:session][:password])
       log_in admin
       flash[:notice] = 'ログインしました'

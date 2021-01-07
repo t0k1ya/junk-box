@@ -1,14 +1,18 @@
 <%= form_with(model: @user, scope: :session, local: true) do |f| %>
   <%= render 'admin/shared/error_messages' %>
-
-  <%= f.label :email, 'メールアドレス' %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password, 'パスワード' %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation, 'パスワード確認' %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit 'ログイン' %>
+  <div>
+    <%= f.label :email, 'メールアドレス' %><br />
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :password, 'パスワード' %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, 'パスワード確認' %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit 'ログイン' %>
+  </div> 
 <% end %>

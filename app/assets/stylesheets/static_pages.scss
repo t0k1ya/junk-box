@@ -2,12 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 header {
+  text-align: center;
   padding: 20px 30px;
-  color: white;
-  background-color: #606060;
+/*  color: white; */
+/*  background-color: #606060; */
   a {
     text-decoration: none;
-    color: white;
+    color: black;
   }
 
   .blog_title {
@@ -17,8 +18,8 @@ header {
 
 footer {
   padding: 30px;
-  color: white;
-  background-color: #606060;
+  color: black;
+/*  background-color: #606060; */
 
   .copy_right_wrapper {
     text-align: center;
@@ -31,7 +32,7 @@ footer {
 .static_pages_wrapper {
   width: 100%;
   min-width: 800px;
-  background-color: #606060;
+/*  background-color: #606060; */
 }
 
 /* 
@@ -42,7 +43,7 @@ footer {
 }
 
 .search {
-  color: white;
+  color: black;
 }
 
 /*
