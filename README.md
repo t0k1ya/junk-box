@@ -7,7 +7,7 @@ Things you may want to cover:
 
 * Ruby version
     - 2.6.3
-* instal1lation
+* installation
 1. clone docker-rails repository
     ````
     $ git clone https://github.com/t0k1ya/docker_rails.git
