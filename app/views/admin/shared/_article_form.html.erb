@@ -1,0 +1,17 @@
+<div class="admin_article_wrapper">
+  <section class="post_wrapper">
+    <%= form_with model: [:admin, @article], local: true do |f|  %>
+      <div>
+        <%= f.label :title, 'タイトル' %><br />
+        <%= f.text_field :title %>
+      </div>
+      <div>
+        <%= f.rich_text_area :content %>
+      </div>
+      <div>
+        <%= f.submit yield(:submit1) %>
+        <%= f.submit '下書き', formaction: draft_admin_articles_path %>
+      </div>
+    <% end %>
+  </section>
+</div>
