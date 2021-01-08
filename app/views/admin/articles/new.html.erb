@@ -1,18 +1,2 @@
-<div class="admin_article_wrapper">
-  <section class="post_wrapper">
-    <%= form_with model: @article, url: '/admin/articles', local: true do |f|  %>
-      <div>
-        <%= f.label :title, 'タイトル' %><br />
-        <%= f.text_field :title %>
-      </div>
-      <div>
-        <%= f.rich_text_area :content %>
-      </div>
-      <div>
-        <%= f.submit '投稿する' %>
-        <%= f.submit '保存する', formaction: draft_admin_articles_path %>
-      </div>
-    <% end %>
-  </section>
-
-</div>
+<% provide(:submit1, '投稿する') %>
+<%= render 'admin/shared/article_form' %>

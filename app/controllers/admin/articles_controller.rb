@@ -25,21 +25,28 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = getAdminArticle
   end
 
   def edit
+    @article = getAdminArticle
   end
 
   def update
+    puts 'called'
   end
 
   private
     def article_params
       params.require(:article).permit(:title, :content)
+      article = current_user.
     end
 
     def create_index(content)
       puts 'content: ', content.to_s
+    end
+
+    def getAdminArticle
+      current_user.articles.find(params[:id])
     end
 end
