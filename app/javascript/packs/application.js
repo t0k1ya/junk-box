@@ -18,3 +18,8 @@ require("channels")
 
 require("trix")
 require("@rails/actiontext")
+require('jquery')
+
+$(function() {
+  console.log('hello world')
+})

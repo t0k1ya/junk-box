@@ -33,17 +33,20 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def update
-    puts 'called'
+    @article = getAdminArticle
+    @article.update(article_params)
+    flash[:notice] = '編集を保存しました'
+    redirect_to admin_path(current_user) 
   end
 
   private
     def article_params
+      puts 'params: ', params
       params.require(:article).permit(:title, :content)
-      article = current_user.
+      #article = current_user.
     end
 
     def create_index(content)
-      puts 'content: ', content.to_s
     end
 
     def getAdminArticle
