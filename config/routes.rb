@@ -10,9 +10,11 @@ Rails.application.routes.draw do
     resources :articles do
       collection do
         post :draft
+        post :turn_to_draft
       end
     end
   end
   # 例外処理 TODO: コメアウト取り消す
   # get '*path', controller: 'application', action: 'render_404'
 end
+

@@ -12,7 +12,6 @@ class Admin::ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    # create_index(@article.content)
     @article.status = '1'
     @article.is_deleted = false
     if @article.save
@@ -22,6 +21,19 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def draft
+    puts 'called'
+    @article = current_user.articles.build(article_params)
+    @article.status = '0'
+    @article.is_deleted = false
+    if @article.save
+      flash[:notice] = '記事を下書き保存しました'
+      redirect_to admin_path(current_user)
+    end
+  end
+
+  def turn_to_draft
+    puts 'params: ', params
+    redirect_to admin_path(current_user)
   end
 
   def show

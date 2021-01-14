@@ -4,10 +4,19 @@
     <div class="item">
       <div class="article">
         <div class="title"><%= article.title %></div>
-        <%= article.created_at.to_s(:datetime_jp) %>
+        <span class="small"><%= article.created_at.to_s(:datetime_jp) %></span>
+        <span class="small"><%= show_status(article.status) %></span>
       </div>
-      <div>
-        <%= link_to('編集', edit_admin_article_path(article)) %>
+      <div class="action_wrapper">
+        <div class="clickable_item">
+          <%= link_to('編集', edit_admin_article_path(article)) %>
+        </div>
+        <div class="clickable_item">
+          <%= link_to('下書きに戻す', turn_to_draft_admin_articles_path(article.id), data: { confirm: '下書きに戻しますか？?'} )  %>
+        </div>
+        <div class="clickable_item">
+          <%= link_to('物理削除', '#', data: { confirm: '削除しますか？'} )  %>
+        </div>
       </div>
     </div>
   <% end %>

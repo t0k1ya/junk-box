@@ -20,6 +20,6 @@ require("trix")
 require("@rails/actiontext")
 require('jquery')
 
-$(function() {
-  console.log('hello world')
+$(".aarticle_form").change(function() {
+  console.log('changed')
 })
