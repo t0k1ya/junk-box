@@ -3,10 +3,10 @@
     <%= form_with model: [:admin, @article], local: true do |f|  %>
       <div>
         <%= f.label :title, 'タイトル' %><br />
-        <%= f.text_field :title %>
+        <%= f.text_field :title, class: 'article_form' %>
       </div>
       <div>
-        <%= f.rich_text_area :content %>
+        <%= f.rich_text_area :content, class: 'article_form' %>
       </div>
       <div>
         <%= f.submit yield(:submit1) %>

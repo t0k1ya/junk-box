@@ -1,24 +1,19 @@
 <div class="admin_show_wrapper">
   <nav class="navigator">
-    <div>
-      ログイン中のユーザ<br />
-      <%= @admin.name %>
+    <div class="action">
+      ユーザ: <%= @admin.name %>
     </div>
-    <div>
+    <div class="action">
       <%= link_to '新規作成', new_admin_article_path %>
     </div>
-    <div>
+    <div class="action">
       <%= link_to '記事一覧', admin_articles_path %>
     </div>
-    <div>
+    <div class="action">
       <%= link_to 'アクセス解析', '#' %>
     </div>
-    <div>
+    <div class="action">
       <%= link_to 'ログアウト', '#' %>
-    </div>
-    <div>
-    </div>
-    <div>
     </div>
   </nav>
   <div class="article_list">
