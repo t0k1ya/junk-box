@@ -12,11 +12,12 @@
 
   <body>
     <%= render 'shared/header' %>
-    <div>
-      <% flash.each do |msg_type, msg| %>
+    <% flash.each do |msg_type, msg| %>
+      <div class="flash_wrapper">
         <%= msg %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+
     <%= yield %>
     <% if Rails.env.development? %>
       <div class="dubug_wrapper"><%= debug(params) %></div>
