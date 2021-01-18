@@ -1,5 +1,6 @@
 class Admin::ArticlesController < ApplicationController
   before_action :logged_in_user
+  skip_before_action :verify_authenticity_token, only: :draft
 
   def index
     @articles = current_user.articles.all
@@ -21,19 +22,27 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def draft
-    puts 'called'
     @article = current_user.articles.build(article_params)
     @article.status = '0'
     @article.is_deleted = false
     if @article.save
       flash[:notice] = '記事を下書き保存しました'
-      redirect_to admin_path(current_user)
+    else
+      flash[:alert] = '下書き保存失敗です'
     end
+    redirect_to admin_path(current_user)
   end
 
   def turn_to_draft
-    puts 'params: ', params
+    @article = current_user.articles.find(params[:id])
+    @article.status = '0'
+    if @article.save
+      flash[:notice] = '下書きに戻しました'
+    else
+      flash[:alert] = '失敗です'
+    end
     redirect_to admin_path(current_user)
+
   end
 
   def show
@@ -51,9 +60,14 @@ class Admin::ArticlesController < ApplicationController
     redirect_to admin_path(current_user) 
   end
 
+  def destroy
+    @article = current_user.articles.destroy(params[:id])
+    flash[:notice] = '記事を削除しました'
+    redirect_to admin_path(current_user)
+  end
+
   private
     def article_params
-      puts 'params: ', params
       params.require(:article).permit(:title, :content)
       #article = current_user.
     end
