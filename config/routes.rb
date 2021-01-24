@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :articles do
       collection do
         post :draft
-        post :turn_to_draft
       end
     end
   end
