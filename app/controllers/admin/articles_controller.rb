@@ -33,18 +33,6 @@ class Admin::ArticlesController < ApplicationController
     redirect_to admin_path(current_user)
   end
 
-  def turn_to_draft
-    @article = current_user.articles.find(params[:id])
-    @article.status = '0'
-    if @article.save
-      flash[:notice] = '下書きに戻しました'
-    else
-      flash[:alert] = '失敗です'
-    end
-    redirect_to admin_path(current_user)
-
-  end
-
   def show
     @article = getAdminArticle
   end
@@ -55,8 +43,20 @@ class Admin::ArticlesController < ApplicationController
 
   def update
     @article = getAdminArticle
-    @article.update(article_params)
-    flash[:notice] = '編集を保存しました'
+    if (params[:status_to] == '0')
+      @article.status = '0'
+      if @article.save
+        flash[:notice] = '下書きに戻しました'
+      end
+    elsif (params[:status_to] == '1')
+      @article.status = '1'
+      if @article.save
+        flash[:notice] = '公開しました'
+      end
+    else
+      @article.update(article_params)
+      flash[:notice] = '編集を保存しました'
+    end
     redirect_to admin_path(current_user) 
   end
 
