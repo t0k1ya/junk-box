@@ -7,6 +7,15 @@
       <div>
         <%= f.rich_text_area :content, class: 'article_form' %>
       </div>
+       <div>
+        <%= f.label :category, 'カテゴリ' %>
+        <%= f.collection_check_boxes(:category_id, Category.all, :id, :name) do |category| %> 
+          <%= category.label do %>
+            <%= category.check_box %>
+            <%= category.text %>
+          <% end %>
+        <% end %>
+      </div>
       <div>
         <%= f.submit yield(:submit1) %>
         <%= f.submit '下書き', formaction: draft_admin_articles_path %>
