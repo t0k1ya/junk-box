@@ -62,4 +62,7 @@ Rails.application.configure do
 
   # 許可するホスト名
   config.hosts << "www.fromhanoi.site"
+
+  # ログ出力
+  config.logger = Logger.new(STDOUT)
 end
