@@ -68,7 +68,8 @@ class Admin::ArticlesController < ApplicationController
 
   private
     def article_params
-      puts 'what is in: ', params['category_id']
+      # category_idが配列になっている
+      params[:article][:category_id] = params[:article][:category_id][1]
       params.require(:article).permit(:title, :content, :category_id)
     end
 

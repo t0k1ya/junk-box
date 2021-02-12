@@ -64,5 +64,7 @@ Rails.application.configure do
   config.hosts << "www.fromhanoi.site"
 
   # ログ出力
-  config.logger = Logger.new(STDOUT)
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
 end
