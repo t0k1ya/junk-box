@@ -68,9 +68,7 @@ class Admin::ArticlesController < ApplicationController
 
   private
     def article_params
-      # category_idが配列になっている
-      params[:article][:category_id] = params[:article][:category_id][1]
-      params.require(:article).permit(:title, :content, :category_id)
+      params.require(:article).permit(:title, :content, {category_ids: [] })
     end
 
     def create_index(content)
