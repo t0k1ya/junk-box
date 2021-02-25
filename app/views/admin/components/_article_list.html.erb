@@ -1,13 +1,25 @@
 <div class="_article_list__wrapper">
-
   <% articles.each do |article| %>
     <div class="item">
       <div class="article">
         <div class="title"><%= article.title %></div>
-        <%= article.created_at.to_s(:datetime_jp) %>
+        <span class="small"><%= article.created_at.to_s(:datetime_jp) %></span>
+        <span class="small"><%= show_status(article.status) %></span>
       </div>
-      <div>
-        <%= link_to('編集', edit_admin_article_path(article)) %>
+      <div class="action_wrapper">
+        <div class="clickable_item">
+          <%= link_to('編集', edit_admin_article_path(article)) %>
+        </div>
+        <div class="clickable_item">
+          <% if article.status == '0' %>
+            <%= link_to('公開する', admin_article_path(article.id, status_to: '1'), data: { confirm: '公開しますか？?'}, method: :patch )  %>
+          <% elsif article.status === '1' %>
+            <%= link_to('下書きに戻す', admin_article_path(article.id, status_to: '0'),  data: { confirm: '下書きに戻しますか？?'}, method: :patch )  %>
+          <% end %>
+        </div>
+        <div class="clickable_item">
+          <%= link_to('物理削除', admin_article_path(article.id), data: { confirm: '削除しますか？'}, method: :delete )  %>
+        </div>
       </div>
     </div>
   <% end %>

@@ -16,3 +16,4 @@ Rails.application.routes.draw do
   # 例外処理 TODO: コメアウト取り消す
   # get '*path', controller: 'application', action: 'render_404'
 end
+

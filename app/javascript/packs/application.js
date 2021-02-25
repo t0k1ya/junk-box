@@ -18,3 +18,8 @@ require("channels")
 
 require("trix")
 require("@rails/actiontext")
+require('jquery')
+
+$(".aarticle_form").change(function() {
+  console.log('changed')
+})

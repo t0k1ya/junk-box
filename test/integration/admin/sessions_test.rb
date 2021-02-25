@@ -22,7 +22,7 @@ class Admin::SessionsTest < ActionDispatch::IntegrationTest
         password: 'jjjjjj'
       }
     }
-    get admin_login_path
+    get "#{admin_login_path}?secret=morelia"
     assert_redirected_to admin_url(@admin)
   end
 

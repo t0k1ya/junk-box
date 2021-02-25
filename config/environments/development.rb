@@ -62,4 +62,9 @@ Rails.application.configure do
 
   # 許可するホスト名
   config.hosts << "www.t12i.xyz"
+
+  # ログ出力
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
 end

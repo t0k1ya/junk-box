@@ -2,11 +2,19 @@
   <section class="post_wrapper">
     <%= form_with model: [:admin, @article], local: true do |f|  %>
       <div>
-        <%= f.label :title, 'タイトル' %><br />
-        <%= f.text_field :title %>
+        <%= f.text_field :title, class: 'article_form', placeholder: 'タイトル' %>
       </div>
       <div>
-        <%= f.rich_text_area :content %>
+        <%= f.rich_text_area :content, class: 'article_form' %>
+      </div>
+       <div>
+        <%= f.label :category, 'カテゴリ' %>
+        <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+          <%= category.label do %>
+            <%= category.check_box %>
+            <%= category.text %>
+          <% end %>
+        <% end %>
       </div>
       <div>
         <%= f.submit yield(:submit1) %>
@@ -15,3 +23,4 @@
     <% end %>
   </section>
 </div>
+<%= javascript_pack_tag 'application' %>

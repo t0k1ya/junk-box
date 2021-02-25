@@ -7,13 +7,6 @@ User.create!(
   admin: true,
 )
 
-# user = User.find(1)
-
-# 20.times do |n|
-#   title = 'Hello World'
-#   Article.create!(
-#     user: user,
-#     title: title,
-#     status: 1, # 公開済み
-#   )
-# end
+Category.create!(
+  name: "テクノロジー"
+)
