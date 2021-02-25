@@ -61,7 +61,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # 許可するホスト名
-  config.hosts << "www.fromhanoi.site"
+  config.hosts << "www.t12i.xyz"
 
   # ログ出力
   logger           = ActiveSupport::Logger.new(STDOUT)
