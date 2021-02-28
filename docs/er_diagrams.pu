@@ -1,0 +1,57 @@
+@startuml
+title ER図
+
+entity users {
+  + id [PK]
+  ==
+  name:
+  email:
+  password_digest:
+  activated:
+  admin:
+}
+
+entity articles {
+  + id [PK]
+  ==
+  # user_id [FK(users, id)]
+  title:
+  content:
+  updated_at:
+  is_deleted:
+}
+
+entity article_category_relations {
+  + id [PK]
+  ==
+  # article_id [FK(articles, id)]
+  # category_id [FK(categories, id)]
+}
+
+entity categories {
+  + id [PK]
+  ==
+  name:
+}
+
+entity article_status_relations {
+  + id [PK]
+  ==
+  # article_id [FK(articles, id)]
+  # status_id [FK(categories, id)]
+}
+
+entity status {
+  + id [PK]
+  ==
+  status:
+}
+
+/' リレーション '/
+users --o{ articles
+articles --o{ article_category_relations
+articles --o{ article_status_relations
+article_category_relations }|--|| categories
+article_status_relations }|--|| status
+
+@enduml
