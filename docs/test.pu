@@ -1,0 +1,21 @@
+@startuml
+/' プレビュー: option + d '/
+title ER図
+entity entity1 {
+  primary_key
+  --
+  attribute
+}
+entity "entity 2" as entity2 {
+
+}
+
+entity entity3 {
+  primary_key
+  --
+  attribute
+}
+entity "entity 3" as entity3 {
+
+}
+@enduml
