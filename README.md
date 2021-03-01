@@ -29,8 +29,13 @@
     ```
     $ docker-compose run app rails  db:setup RAILS_ENV=production
     ```
-2. start project
+2. db migration
     ```
-    $ docker-compose -f docker-compose.prd.yml up 
+    $ docker-compose -f docker-compose.prd.yml exec app rails db:create
+    $ docker-compose -f docker-compose.prd.yml exec app rails db:migrate
+    ```
+3. start project
+    ```
+    $ docker-compose -f docker-compose.prd.yml up --build
     ```
 
