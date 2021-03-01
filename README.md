@@ -1,13 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
     - 2.6.3
-* installation
+* インストール & 起動
 1. clone docker-rails repository
     ````
     $ git clone https://github.com/t0k1ya/docker_rails.git
@@ -27,4 +22,7 @@ Things you may want to cover:
     ```
     $ docker-compose run app rails db:migrate:reset
     ```
+
+* productionモードで起動
+1. docker-compose -f docker-compose.prd.yml up 
 
