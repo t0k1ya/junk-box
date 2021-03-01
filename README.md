@@ -13,16 +13,24 @@
     $ git clone https://github.com/t0k1ya/junk-box.git
     $ mv junk-box src
     ```
+
+3. db migration
+    ```
+    $ docker-compose run app rails db:migrate:reset
+    ```
+
 3. start project
     ```
     $ docker-compose up
     ```
 
-4. db migration
-    ```
-    $ docker-compose run app rails db:migrate:reset
-    ```
-
 * productionモードで起動
-1. docker-compose -f docker-compose.prd.yml up 
+1. create db for production
+    ```
+    $ docker-compose run app rails  db:setup RAILS_ENV=production
+    ```
+2. start project
+    ```
+    $ docker-compose -f docker-compose.prd.yml up 
+    ```
 
