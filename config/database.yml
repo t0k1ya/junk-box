@@ -84,5 +84,6 @@ test:
 production:
   <<: *default
   database: src_production
-  username: src
-  password: <%= ENV['SRC_DATABASE_PASSWORD'] %>
+  username: admin
+  password: admin-pass
+  # password: <%= ENV['SRC_DATABASE_PASSWORD'] %>
