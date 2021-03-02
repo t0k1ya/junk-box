@@ -8,11 +8,15 @@
         <%= f.rich_text_area :content, class: 'article_form' %>
       </div>
        <div>
-        <%= f.label :category, 'カテゴリ' %>
+        <div>
+          <%= f.label :category, 'タグ' %>
+          <%# TODO %>
+          <%= link_to admin_category_path, '新しいタグ', onclick: "window.open(this.href,'hoge', 'height=400, width=800');return false;" %>
+        </div>
         <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
           <%= category.label do %>
             <%= category.check_box %>
-            <%= category.text %>
+            <%= "##{category.text}" %>
           <% end %>
         <% end %>
       </div>
