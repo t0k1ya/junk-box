@@ -24,4 +24,12 @@ class Admin::SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    log_out
+    redirect_to admin_login
+  end
+
+  # def user_params
+  #   params.required(:session).permit(:email, :password, :password_confirmation)
+  # end
 end
