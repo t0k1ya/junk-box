@@ -1,0 +1,19 @@
+<div class="admin_article_wrapper">
+  <section class="post_wrapper">
+    <%= form_with model: [:admin, @category], local: true do |f|  %>
+      <div>
+        <p>タグ一覧</p>
+        <% @category_all.each do |c| %>
+          <p><%= c.name %></p>
+        <% end %>
+      </div>
+      <div>
+        <%= f.text_field :name, placeholder: '新しくタグを登録する' %>
+      </div>
+      <div>
+        <%= f.submit '登録する' %>
+      </div>
+    <% end %> 
+  </section>
+</div>
+<%= javascript_pack_tag 'application' %>
