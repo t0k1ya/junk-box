@@ -7,8 +7,11 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
     get '/:id', to: 'admins#show'
-    get :category
-    post :category
+    
+    resources :categories do
+      collection do
+      end
+    end
 
     resources :articles do
       collection do

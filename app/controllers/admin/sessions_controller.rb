@@ -26,7 +26,7 @@ class Admin::SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to admin_login
+    redirect_to admin_login_path
   end
 
   # def user_params
