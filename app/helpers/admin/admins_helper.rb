@@ -6,4 +6,8 @@ module Admin::AdminsHelper
       return '公開済み'
     end
   end
+
+  def show_tag(name)
+    return "##{name}"
+  end
 end

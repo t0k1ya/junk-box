@@ -14,7 +14,7 @@
         <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
           <%= category.label do %>
             <%= category.check_box %>
-            <%= "##{category.text}" %>
+            <%= show_tag(category.text) %>
           <% end %>
         <% end %>
       </div>

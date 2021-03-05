@@ -2,7 +2,14 @@
   <% articles.each do |article| %>
     <div class="item">
       <div class="article">
-        <div class="title"><%= article.title %></div>
+        <div class="title"><%= link_to(article.title, article_path(article)) %></div>
+        <% if categories = article.categories %>
+          <div class="small">
+            <% categories.each do |category| %>
+              <%= show_tag(category.name) %>
+            <% end %>
+          </div>
+        <% end%>
         <span class="small"><%= article.created_at.to_s(:datetime_jp) %></span>
         <span class="small"><%= show_status(article.status) %></span>
       </div>
