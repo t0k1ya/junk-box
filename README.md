@@ -36,6 +36,8 @@
     ```
 3. start project
     ```
+    // アセットのプリコンパイル
+    $ docker-compose run app  bundle exec rake assets:precompile RAILS_ENV=production 
     $ docker-compose -f docker-compose.prd.yml up --build
     ```
 
