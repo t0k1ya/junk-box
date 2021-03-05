@@ -4,7 +4,9 @@
       <div>
         <p>タグ一覧</p>
         <% @category_all.each do |c| %>
-          <p><%= c.name %></p>
+          <p><%= c.name %>
+              <%= link_to('削除', admin_category_path(c.name), data: { confirm: "#{c.name}を削除しますか？" }, method: :delete) %>
+          </p>
         <% end %>
       </div>
       <div>

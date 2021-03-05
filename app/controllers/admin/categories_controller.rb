@@ -24,6 +24,13 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
-    puts 'called'
+  end
+
+  def destroy
+    tag = params[:id]
+    @tag = Category.where(name: tag).destroy_all
+    flash[:notice] = "タグ\"#{tag}\"を削除しました"
+    redirect_to new_admin_category_path
+
   end
 end
