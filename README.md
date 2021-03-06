@@ -2,7 +2,7 @@
 
 * Ruby version
     - 2.6.3
-* インストール & 起動
+### インストール & 起動
 1. clone docker-rails repository
     ````
     $ git clone https://github.com/t0k1ya/docker_rails.git
@@ -24,7 +24,7 @@
     $ docker-compose up
     ```
 
-* productionモードで起動
+### productionモードで起動
 1. create db for production
     ```
     $ docker-compose run app rails  db:setup RAILS_ENV=production
@@ -41,3 +41,17 @@
     $ docker-compose -f docker-compose.prd.yml up --build
     ```
 
+
+### memo
+
+* reactコンポーネントの作成
+1. コンポーネント生成
+```
+// コンポーネント/ファイル名 props:型
+$ rails g react:component HelloWorld greeting:string
+```
+2. 読み込み
+```
+// 任意の箇所で読み込める
+<%= react_component('HelloWorld', greeting: 'Hello') %>
+```
