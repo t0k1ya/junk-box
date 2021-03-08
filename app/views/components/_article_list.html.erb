@@ -17,6 +17,11 @@
               article.content : "#{article.content.to_plain_text.slice(0, 120)}..."
           %>
         </div>
+        <% if categories = article.categories %>
+          <% categories.each do |category| %>
+            <%= show_tag(category.name) %>
+          <% end %>
+        <% end %>
       <% end %>
     </article>
   <% end %>
