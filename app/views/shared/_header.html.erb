@@ -1,7 +1,7 @@
 <header>
   <div class="blog_title">
-    <%= link_to 'Junk-Box', root_path %><br />
-    <%= link_to '管理画面', admin_path(current_user)  if request.path.include?('/admin') && current_user  %>
+    <%= link_to 'Junk-Box', root_path, class: 'theme_color' %><br />
+    <%= link_to '管理画面', admin_path(current_user) if request.path.include?('/admin') && current_user  %>
   </div>
   <% if @admin %>
     <%= link_to("#{@admin.name}でログイン中", admin_path(@admin)) %>
