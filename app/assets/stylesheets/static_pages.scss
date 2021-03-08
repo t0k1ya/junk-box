@@ -4,8 +4,7 @@
 header {
   text-align: center;
   padding: 20px 30px;
-/*  color: white; */
-/*  background-color: #606060; */
+
   a {
     text-decoration: none;
     color: black;
@@ -30,9 +29,10 @@ footer {
 }
 
 .static_pages_wrapper {
-  padding: 0px 100px;
-  width: calc(100% - 200px);
-  min-width: 800px;
+  // padding: 0px 200px;
+  // width: calc(100% - 400px);
+  padding: 0px 20%;
+  min-width: calc(800px - 40%);
 /*  background-color: #606060; */
 }
 
