@@ -13,8 +13,8 @@
         </div>
         <div class="intro">
           <%=
-            article.content.to_plain_text.length < 100 ? 
-              article.content : "#{article.content.to_plain_text.slice(0, 100)}..."
+            article.content.to_plain_text.length < 120 ? 
+              article.content : "#{article.content.to_plain_text.slice(0, 120)}..."
           %>
         </div>
       <% end %>
