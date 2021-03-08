@@ -30,7 +30,8 @@ footer {
 }
 
 .static_pages_wrapper {
-  width: 100%;
+  padding: 0px 100px;
+  width: calc(100% - 200px);
   min-width: 800px;
 /*  background-color: #606060; */
 }
@@ -52,8 +53,6 @@ footer {
 .article_list_wrapper {
   margin: 100px 50px;
   padding-left: 20px;
-  display: flex;
-  flex-wrap: wrap;
   background-color: white;
 
   h1, p {
@@ -70,14 +69,7 @@ footer {
   }
 
   .article_headline {
-    margin: 30px 10px;
-    width: 300px;
-  }
-
-  .eyecatch {
-    width: auto;
-    height: 150px;
-    background-color: #E9E1E1;
+    margin: 30px 0px;
   }
 
   .title {
@@ -89,6 +81,8 @@ footer {
 
 @media (max-width: 480px) {
   .static_pages_wrapper {
+    padding: 0px;
+    width: 100%;
     min-width: 0;
   }
 
