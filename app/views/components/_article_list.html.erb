@@ -1,3 +1,5 @@
+<%= render 'components/search_result_msg' %>
+
 <% @articles.each do |article| %>
   <article class="article_headline">
     <%= link_to(article_path(article)) do %>

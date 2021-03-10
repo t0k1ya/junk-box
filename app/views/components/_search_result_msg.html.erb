@@ -1,0 +1,9 @@
+<% if @articles.length == 0 %>
+  <div class="search_result">
+    <%= "\"#{@keyword}\"についての記事はありません" %>
+  </div>
+<% else %>
+  <div class="search_result">
+    <%= "\"#{@keyword}\"についての記事が#{@articles.length}件あります" %>
+  </div>
+<% end %>
