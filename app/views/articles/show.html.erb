@@ -5,13 +5,6 @@
         <div class="title">
           <%= @article.title %>
         </div>
-        <% if categories = @article.categories %>
-          <div class="small">
-            <% categories.each do |category| %>
-              <%= show_tag(category.name) %>
-            <% end %>
-          </div>
-        <% end%>
         <div>
           <%= @article.created_at.to_s(:datetime_jp) %>
         </div>
@@ -19,6 +12,13 @@
       <section class="content_wrapper">
         <%= @article.content %>
       </section>
+      <% if categories = @article.categories %>
+        <div class="small">
+          <% categories.each do |category| %>
+            <%= show_tag(category.name) %>
+          <% end %>
+        </div>
+      <% end%>
     </div>
     <%# index機能 %>
     
