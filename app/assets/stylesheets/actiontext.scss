@@ -9,6 +9,9 @@
 // <action-text-attachment> element we wrap around attachments. Otherwise,
 // images in galleries will be squished by the max-width: 33%; rule.
 .trix-content {
+  pre.hljs {
+    background-color: black;
+  }
   font-size: 1.6rem;
   line-height: 2;
   .attachment-gallery {
