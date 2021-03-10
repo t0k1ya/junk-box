@@ -3,6 +3,20 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .admin_article_wrapper {
   padding: 5% 15%;
+
+  .article_form_title {
+    margin-bottom: 15px;
+    width: 300px;
+    height: 25px;
+    border: none;
+    border-bottom: solid 1px #55606a;
+    outline: none;
+    font-size: 2rem;
+  }
+
+  .article_form_textarea {
+    font-size: 1.5rem;
+  }
 }
 
 .post_wrapper {

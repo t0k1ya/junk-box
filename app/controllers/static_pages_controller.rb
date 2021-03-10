@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
   def search
     if @keyword = params[:keyword]
       @articles = Article.where('title LIKE ?', "%#{@keyword}%")
+      @searched = true
       render 'index'
     end
   end
