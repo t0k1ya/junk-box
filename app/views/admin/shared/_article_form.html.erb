@@ -2,10 +2,10 @@
   <section class="post_wrapper">
     <%= form_with model: [:admin, @article], local: true do |f|  %>
       <div>
-        <%= f.text_field :title, class: 'article_form', placeholder: 'タイトル' %>
+        <%= f.text_field :title, class: 'article_form_title', placeholder: 'タイトル' %>
       </div>
       <div>
-        <%= f.rich_text_area :content, class: 'article_form' %>
+        <%= f.rich_text_area :content, class: 'article_form_textarea' %>
       </div>
        <div>
         <div>

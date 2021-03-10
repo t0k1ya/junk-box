@@ -1,4 +1,6 @@
-<%= render 'components/search_result_msg' %>
+<% if @searched %>
+  <%= render 'components/search_result_msg' %>
+<% end %>
 
 <% @articles.each do |article| %>
   <article class="article_headline">
