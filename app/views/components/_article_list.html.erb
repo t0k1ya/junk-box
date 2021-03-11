@@ -1,26 +1,30 @@
-<div class="article_list_wrapper">
-  <% @articles.each do |article| %>
-    <article class="article_headline">
-      <%= link_to(article_path(article)) do %>
-        <span class="date">
-          <%= article.created_at.to_s(:datetime_jp) %>
-        </span>
-        <div class="eyecatch">
-          <img src="" alt="" />
-        </div>
-        <div class="title">
-          <%=
-            article.title.length < 60 ?
-              article.title : article.title.slice(0, 10)
-          %>
-        </div>
-        <div class="intro">
-          <%=
-            article.content.to_plain_text.length < 100 ? 
-              article.content : "#{article.content.to_plain_text.slice(0, 100)}..."
-          %>
-        </div>
+<% if @searched %>
+  <%= render 'components/search_result_msg' %>
+<% end %>
+
+<% @articles.each do |article| %>
+  <article class="article_headline">
+    <%= link_to(article_path(article)) do %>
+      <span class="date">
+        <%= article.created_at.to_s(:datetime_jp) %>
+      </span>
+      <div class="title">
+        <%=
+          article.title.length < 60 ?
+            article.title : article.title.slice(0, 10)
+        %>
+      </div>
+      <div class="intro">
+        <%=
+          article.content.to_plain_text.length < 120 ? 
+            article.content : "#{article.content.to_plain_text.slice(0, 120)}..."
+        %>
+      </div>
+      <% if categories = article.categories %>
+        <% categories.each do |category| %>
+          <%= show_tag(category.name) %>
+        <% end %>
       <% end %>
-    </article>
-  <% end %>
-</div>
+    <% end %>
+  </article>
+<% end %>

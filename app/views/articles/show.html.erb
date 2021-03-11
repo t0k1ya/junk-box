@@ -1,9 +1,20 @@
-<div class="article_detail_wrapper">
+<div class="static_pages_wrapper article_detail_wrapper">
   <div class="wrapper">
     <div class="article_wrapper">
       <section class="title_wrapper">
-        <div class="title"><%= @article.title %></div>
-        <div><%= @article.created_at.to_s(:datetime_jp) %></div>
+        <div class="title">
+          <%= @article.title %>
+        </div>
+        <% if categories = @article.categories %>
+          <div class="small">
+            <% categories.each do |category| %>
+              <%= show_tag(category.name) %>
+            <% end %>
+          </div>
+        <% end%>
+        <div>
+          <%= @article.created_at.to_s(:datetime_jp) %>
+        </div>
       </section>
       <section class="content_wrapper">
         <%= @article.content %>

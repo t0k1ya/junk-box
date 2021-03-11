@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .article_detail_wrapper {
-  width: calc(100% - 50%);
-  padding: 0 25%;
+  padding: 0 5%;
 
   .wrapper {
     display: flex;
@@ -24,7 +23,7 @@
   }
 
   .content_wrapper {
-    padding-top: 7%;
+    padding-top: 18%;
   }
 
   .index_wrapper {
@@ -50,14 +49,13 @@
     }
 
     .content_wrapper {
-      padding-top: 5%;
+      padding-top: 15%;
     }
   }
 }
 
 @media (min-width: 1600px) {
   .article_detail_wrapper {
-    width: calc(100% - 70%);
-    padding: 0 35%;
+    padding: 0 10%;
   }
 }

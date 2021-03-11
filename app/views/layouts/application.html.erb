@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
 
@@ -18,9 +19,14 @@
       </div>
     <% end %>
 
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+    
     <% if Rails.env.development? %>
-      <div class="dubug_wrapper"><%= debug(params) %></div>
+      <div class="dubug_wrapper">
+        <p><%= debug(params) %></p>
+      </div>
     <% end %>
     <%= render 'shared/footer' %>
   </body>

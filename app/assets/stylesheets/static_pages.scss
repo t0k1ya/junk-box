@@ -4,8 +4,7 @@
 header {
   text-align: center;
   padding: 20px 30px;
-/*  color: white; */
-/*  background-color: #606060; */
+
   a {
     text-decoration: none;
     color: black;
@@ -18,8 +17,8 @@ header {
 
 footer {
   padding: 30px;
-  color: black;
-/*  background-color: #606060; */
+  color: white;
+  background-color: black;
 
   .copy_right_wrapper {
     text-align: center;
@@ -30,9 +29,8 @@ footer {
 }
 
 .static_pages_wrapper {
-  width: 100%;
-  min-width: 800px;
-/*  background-color: #606060; */
+  padding: 0px 20%;
+  min-width: calc(800px - 40%);
 }
 
 /* 
@@ -49,14 +47,10 @@ footer {
 /*
   article_listコンポーネント
 */
-.article_list_wrapper {
-  margin: 100px 50px;
-  padding-left: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: white;
+.article_headline {
+  margin: 30px 0px;
 
-  h1, p {
+    h1, p {
     margin: 0;
   }
 
@@ -69,38 +63,26 @@ footer {
     color: #55606a;
   }
 
-  .article_headline {
-    margin: 30px 10px;
-    width: 300px;
-  }
-
-  .eyecatch {
-    width: auto;
-    height: 150px;
-    background-color: #E9E1E1;
-  }
-
   .title {
     font-size: 1.5em;
     padding-bottom: 5px;
   }
+}
 
+.search_result {
+  text-align: center;
+  padding-top: 10%;
+  color: #55606a;
 }
 
 @media (max-width: 480px) {
   .static_pages_wrapper {
+    padding: 0% 5%;
     min-width: 0;
   }
 
-  .article_list_wrapper {
-    margin: 10px;
-    padding-left: 0px;
-    padding-top: 10px;
-    display: block;
-
-    .article_headline {
-      margin: 30px 10px;
-      width: auto;
-    }
+  .article_headline {
+    margin: 30px 10px;
+    width: auto;
   }
 }

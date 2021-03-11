@@ -1,7 +1,7 @@
 <div class="search_wrapper">
   <span class="search">search for...</span>
-  <%= form_with(url: '/1', local: true) do |f| %>
+  <%= form_with(url: search_path, method: 'get', local: true) do |f| %>
     <%= f.text_field :keyword %>
-    <%= f.submit "go!" %>
+    <%= f.submit "go!", name: nil %>
   <% end %>
 </div>
