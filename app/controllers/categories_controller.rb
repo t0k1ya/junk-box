@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
 
   def show
-    @articles = Article.where.not(status: '0', is_deleted: true)
-    tag = params[:id]
-    
-    render 'static_pages/index'
+    if tag = Category.find_by(name: params[:id])
+      @articles = tag.articles
+      @tag_name = view_context.show_tag(tag.name)
+    end
+      render 'static_pages/index'
   end
+  
 end
