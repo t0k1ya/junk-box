@@ -5,12 +5,12 @@
 ### インストール & 起動
 1. clone docker-rails repository
     ````
-    $ git clone https://github.com/t0k1ya/docker_rails.git
+    $ git clone https://github.com/t0rkie/rails_env
     ````
 2. clone this repository in docker-rails
     ```
     $ cd docker_rails
-    $ git clone https://github.com/t0k1ya/junk-box.git
+    $ git clone https://github.com/t0rkie/junk-box.git
     $ mv junk-box src
     ```
 
@@ -19,7 +19,13 @@
     $ docker-compose run app rails db:migrate:reset
     ```
 
-3. start project
+3. fetch some modules
+    ```
+    $ docker-compose run app bundle install
+    $ docker-compose run app yarn install
+    ```
+
+4. start project
     ```
     $ docker-compose up
     ```
