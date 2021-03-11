@@ -20,9 +20,6 @@ require("trix")
 require("@rails/actiontext")
 require('jquery')
 
-// コードハイライト
-import 'highlight'
-
 $(".aarticle_form").change(function() {
   console.log('changed')
 })
