@@ -1,6 +1,8 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/*
+ * ベースカラー
+ */
+$gray: #55606a;
+
 header {
   text-align: center;
   padding: 20px 30px;
@@ -34,19 +36,19 @@ footer {
 }
 
 /* 
-  searchコンポーネント
-*/
+ * searchコンポーネント
+ */
 .search_wrapper {
   text-align: center;
 }
 
 .search {
-  color: #55606a;;
+  color: $gray;;
 }
 
 /*
-  article_listコンポーネント
-*/
+ * article_listコンポーネント
+ */
 .article_headline {
   margin: 30px 0px;
 
@@ -60,7 +62,7 @@ footer {
   }
 
   .date, .intro {
-    color: #55606a;
+    color: $gray;
   }
 
   .title {
@@ -72,8 +74,16 @@ footer {
 .search_result {
   text-align: center;
   padding-top: 10%;
-  color: #55606a;
+  color: $gray;
 }
+
+/*
+ * エラーページ
+ */
+ .error_wrapper {
+   text-align: center;
+   color: $gray;
+ }
 
 @media (max-width: 480px) {
   .static_pages_wrapper {
