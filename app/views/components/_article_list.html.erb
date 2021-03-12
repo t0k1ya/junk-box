@@ -2,7 +2,11 @@
   <%= render 'components/search_result_msg' %>
 <% end %>
 
-<% @articles.each do |article| %>
+<% if @tag_name %>
+  <%= render 'components/tag_result_msg' %>
+<% end %>
+
+<% @articles&.each do |article| %>
   <article class="article_headline">
     <%= link_to(article_path(article)) do %>
       <span class="date">
@@ -22,7 +26,8 @@
       </div>
       <% if categories = article.categories %>
         <% categories.each do |category| %>
-          <%= show_tag(category.name) %>
+          <%# <%= show_tag(category.name) %>
+          <%= link_to show_tag(category.name), category_path(category.name) %>
         <% end %>
       <% end %>
     <% end %>

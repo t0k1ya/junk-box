@@ -1,0 +1,9 @@
+<% if @tag_name %>
+  <div class="search_result">
+    <%= @tag_name %>
+  </div>
+<% else %>
+  <div class="search_result">
+    <%= "#{@tag_name}についての記事はありません" %>
+  </div>
+<% end %>
