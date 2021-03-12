@@ -12,9 +12,14 @@ class Admin::SessionsController < ApplicationController
   end
 
   def create
-    admin = User.find_by(email: params[:session][:email].downcase)
-    puts 'params: ', params[:session][:email]
-    if admin&.authenticate(params[:session][:password])
+    if required_params[:password] != required_params[:password_confirmation]
+      flash.now[:alert] = 'パスワードがマッチしません'
+      render :new
+      return
+    end
+    
+    admin = User.find_by(email: required_params[:email].downcase)
+    if admin&.authenticate(required_params[:password])
       log_in admin
       flash[:notice] = 'ログインしました'
       redirect_to admin_url(admin)
@@ -29,7 +34,7 @@ class Admin::SessionsController < ApplicationController
     redirect_to admin_login_path
   end
 
-  # def user_params
-  #   params.required(:session).permit(:email, :password, :password_confirmation)
-  # end
+  def required_params
+    params.required(:session).permit(:email, :password, :password_confirmation)
+  end
 end
