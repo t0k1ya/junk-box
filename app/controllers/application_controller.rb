@@ -3,9 +3,11 @@ class ApplicationController < ActionController::Base
   include Admin::SessionsHelper
 
   # 例外処理 TODO: 最後のコメアウト取り消す
-  rescue_from ActiveRecord::RecordNotFound, with: :render_404
-  rescue_from ActionController::RoutingError, with: :render_404
-  rescue_from Exception, with: :render_500
+  if !Rails.env.development?
+    rescue_from ActiveRecord::RecordNotFound, with: :render_404
+    rescue_from ActionController::RoutingError, with: :render_404
+    rescue_from Exception, with: :render_500
+  end
 
   def render_404
     render template: 'errors/error_404', status: 404,
