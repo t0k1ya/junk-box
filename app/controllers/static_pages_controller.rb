@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def index
     @articles = Article.where.not(status: '0', is_deleted: true)
+      .order(created_at: 'DESC').page(params[:page]).per(10)
     @admin = current_user
   end
 
