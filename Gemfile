@@ -5,6 +5,8 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+# ページネーション
+gem 'kaminari'
 # Reactを扱うためのgem
 gem 'react-rails'
 # has_secure_password 暗号化のためのやつ
