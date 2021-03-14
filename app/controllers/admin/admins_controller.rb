@@ -7,15 +7,4 @@ class Admin::AdminsController < ApplicationController
       .order(created_at: 'DESC').page(params[:page]).per(20)
   end
 
-  def new
-  end
-
-  def create
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end
