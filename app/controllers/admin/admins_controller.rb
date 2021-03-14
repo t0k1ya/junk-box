@@ -4,6 +4,7 @@ class Admin::AdminsController < ApplicationController
   def show
     @admin = User.find(params[:id])
     @articles = @admin.articles.all
+      .order(created_at: 'DESC').page(params[:page]).per(10)
   end
 
   def new
