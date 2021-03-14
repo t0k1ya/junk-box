@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include Admin::SessionsHelper
 
-  # 例外処理 TODO: 最後のコメアウト取り消す
+  # NOTICE: develope環境以外のみ有効
   if !Rails.env.development?
     rescue_from ActiveRecord::RecordNotFound, with: :render_404
     rescue_from ActionController::RoutingError, with: :render_404
