@@ -33,6 +33,8 @@
     <% end %>
   </article>
 <% end %>
-<div class="navigation">
-  <%= paginate @articles %>
-</div>
+<% if @articles.length != 0%>
+  <div class="navigation">
+    <%= paginate @articles %>
+  </div>
+<% end %>
