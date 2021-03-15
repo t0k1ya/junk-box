@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   get '/search', to: 'static_pages#search'
   get '/article/:id', to: 'articles#show', as: :article
 
-  resources :categories do
-    collection do
-    end
-  end
+  get '/category/:name', to: 'categories#show',
+    constraints: {name: /[^\/]+/}, as: :category
   
   namespace :admin do
     get '/login', to: 'sessions#new'
