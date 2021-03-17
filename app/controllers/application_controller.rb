@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include Admin::SessionsHelper
 
   # NOTICE: develope環境以外のみ有効
-  if !Rails.env.development?
+  if Rails.env.production?
     rescue_from ActiveRecord::RecordNotFound, with: :render_404
     rescue_from ActionController::RoutingError, with: :render_404
     rescue_from Exception, with: :render_500
