@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
   # NOTICE: develope環境以外のみ有効
-  if !Rails.env.development?
+  if Rails.env.production?
     get '*path', controller: 'application', action: 'render_404'
   end
 end
