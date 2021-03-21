@@ -7,5 +7,8 @@
     <% if @admin %>
       <%= link_to("#{@admin.name}でログイン中", admin_path(@admin)) %>
     <% end %>
+    <nav>
+      <%= link_to('管理人', me_path('1')) %>
+    </nav>
   </div>
 </header>
