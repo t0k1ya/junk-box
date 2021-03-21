@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/category/:name', to: 'categories#show',
     constraints: {name: /[^\/]+/}, as: :category
 
-  get '/me', to: 'admins#show'
+  get '/me', to: 'admins#index'
   
   namespace :admin do
     get '/login', to: 'sessions#new'
