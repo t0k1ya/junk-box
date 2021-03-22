@@ -11,13 +11,6 @@ entity users {
   admin:
 }
 
-entity profiles {
-  + id [PK]
-  ==
-  # user_id [FK(users, id)]
-  content:
-}
-
 entity articles {
   + id [PK]
   ==
@@ -56,7 +49,6 @@ entity status {
 
 /' リレーション '/
 users --o{ articles
-users -- profiles
 articles --o{ article_category_relations
 articles --o{ article_status_relations
 article_category_relations }|--|| categories
