@@ -1,0 +1,20 @@
+<div class="admin_article_wrapper">
+  <div>
+    <h1>プロフィール</h1>
+  </div>
+  <section class="post_wrapper">
+    <%= form_with model: [:admin, @profile], local: true do |f|  %>
+      <div>
+        <%= f.text_field :title, class: 'article_form_title', placeholder: 'タイトル' %>
+      </div>
+      <div>
+        <%= f.rich_text_area :content, class: 'article_form_textarea' %>
+      </div>
+      <div>
+        <%= f.submit yield(:submit1) %>
+        
+      </div>
+    <% end %>
+  </section>
+</div>
+<%= javascript_pack_tag 'application' %>
