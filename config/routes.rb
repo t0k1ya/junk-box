@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
     get '/:id', to: 'admins#show'
+    get '/profile/new', to: 'profiles#new'
     
     resources :categories do
       collection do
@@ -24,6 +25,8 @@ Rails.application.routes.draw do
         post :draft
       end
     end
+
+    resources :profiles
   end
   # NOTICE: develope環境以外のみ有効
   if Rails.env.production?
