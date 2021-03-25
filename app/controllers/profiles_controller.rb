@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
   def index
-    @profile = current_user.profile
+    @profile = Profile.first
   end
 end

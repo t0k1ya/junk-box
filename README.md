@@ -38,7 +38,7 @@
 2. db migration
     ```
     $ docker-compose -f docker-compose.prd.yml exec app rails db:create
-    $ docker-compose -f docker-compose.prd.yml exec app rails db:migrate
+    $ docker-compose -f docker-compose.prd.yml run app rails db:migrate
     ```
 3. start project
     ```
