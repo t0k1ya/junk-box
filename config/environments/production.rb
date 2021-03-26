@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # 追記 https://qiita.com/hiroky_814/items/8dce4f0097c261037c8e
+  # config.serve_static_files = true
+  # config.assets.js_compressor = :uglifier
+  # config.assets.js_compressor = Uglifier.new(harmony: true)
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

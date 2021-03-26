@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "./actiontext.scss";
+ 
 html {
   /* 1em = 10pxに設定: 16px(デフォのフォントサイズ) * 0.625 = 10px */
   font-size: 62.5%;
